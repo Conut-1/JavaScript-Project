@@ -3,8 +3,8 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    //mode: 'development',
-    entry: './src/index.js',
+    mode: 'development',
+    entry: './src/main.js',
     output: {
         filename: 'main.js',
         path: `${__dirname}/dist`,
@@ -19,10 +19,11 @@ module.exports = {
     },
     devServer: {
         static: './dist',
+        port: 8080,
     },
     plugins: [
         new HtmlWebpackPlugin({
-        template: './src/index.html'
+        template: './src/html/index.html'
         }),
         new MiniCssExtractPlugin({
             linkType: false,
